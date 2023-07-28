@@ -31,7 +31,7 @@ userRouter.post("/login", async (req, res) => {
         if (user) {
             bcrypt.compare(password, user.password, (err, result) => {
                 if (result) {
-                    res.status(200).send({ "msg": "login succesfully","name":user.name, "token": jwt.sign({ "userID":user._id }, "jammi", { expiresIn: '3h' }) })
+                    res.status(200).send({ "msg": "login succesfully", "token": jwt.sign({ "userID":user._id }, "jammi", { expiresIn: '3h' }) })
                 } else {
                     res.status(400).send({ "msg": "login failed" })
                 }
