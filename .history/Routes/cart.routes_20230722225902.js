@@ -62,8 +62,6 @@ cartRouter.post("/Fashion/:id",auth, async (req, res) => {
 
 
   
-
-  
 cartRouter.post("/Electronics/:id",auth, async (req, res) => {
     const token = req.headers.authorization
     const decoded = jwt.verify(token, "jammi")
